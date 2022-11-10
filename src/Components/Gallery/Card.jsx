@@ -29,6 +29,6 @@ const Title = styled.h1`
     border-color: black;
     text-align: center;
     color: #FFFFFF;
-    mix-blend-mode: difference;
+    mix-blend-mode: screen;
     padding-bottom: 30px;
     `

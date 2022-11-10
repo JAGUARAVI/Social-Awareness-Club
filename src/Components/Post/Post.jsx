@@ -19,7 +19,7 @@ export default function Post(props) {
         window.scrollTo(0, 0);
         (async () => {
             const { data } = await supabase.from('posts').select().eq('id', id) || { data: [] };
-            if (!data.length) return navigate('/post/notfound');
+            if (!data || !data.length) return navigate('/post/notfound', { replace: true });
             setTitle(data[0].title);
             setContent(data[0].content);
             setImage(data[0].image);
@@ -40,9 +40,9 @@ export default function Post(props) {
                 </Grid>
             </Grid.Container>
             <div style={{
-                color: "black",
-                display: "flex",
-                flexDirection: "column",
+                color: 'black',
+                display: 'flex',
+                flexDirection: 'column',
                 gap: 30,
                 margin: 16
             }}>

@@ -18,7 +18,7 @@ function Navbar({ session }) {
                 </Link>
             </NextNavbar.Brand>
             <NextNavbar.Content activeColor='success' variant='underline-rounded' enableCursorHighlight>
-                <NextNavbar.Link onPress={() => navigate('/')} activeClassName='active' isActive={location.pathname === '/' && (location.hash ? location.hash === '#' : true)}>
+                <NextNavbar.Link href={location.pathname === '/' ? '/#' : null} onPress={() => navigate('/')} activeClassName='active' isActive={location.pathname === '/' && (location.hash ? location.hash === '#' : true)}>
                     &nbsp;&nbsp; Home &nbsp;&nbsp;
                 </NextNavbar.Link>
                 <NextNavbar.Link href={location.pathname === '/' ? '/#posts' : null} onPress={() => {
